@@ -1,0 +1,16 @@
+Package: melonnpan
+Title: Model-based Genomically Informed High-dimensional Predictor of Microbial Community Metabolite Profiles
+Version: 0.99.0
+Date: 2019-05-21
+Authors@R: person("Himel", "Mallick", email = "hmallick@hsph.harvard.edu",
+  role = c("aut", "cre"))
+Description: MelonnPan is a computational method for predicting metabolite compositions from microbiome sequencing data. It uses elastic net regularization to infer which sequencing features are predictive and combines these features to estimate the composite metabolome. 
+Depends: R (>= 3.5.0), glmnet, foreach, getopt, doParallel, vegan, data.table, ggplot2, AssocTests, optparse, tibble, GenABEL (>= 1.8.0), GenABEL.data (>= 1.0.0)
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+License: MIT 
+LazyData: true
+Encoding: UTF-8
+RoxygenNote: 6.1.1
+biocViews: Metagenomics, Software, Metabolomics
+
