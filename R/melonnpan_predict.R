@@ -38,9 +38,9 @@ melonnpan.predict<-function(
   # is a data frame
   if (is.character(metag)){
     test.metag <-data.frame(readTable(metag))
-} else{    
+  } else{    
     test.metag<-metag
-}
+  }
   
 
   # Sanity check for proportionality 
@@ -52,7 +52,13 @@ melonnpan.predict<-function(
   ##################
   
   # Load training metagenomes
-  if (is.null(train.metag)) train.metag<-melonnpan::melonnpan.training.data
+  if (is.null(train.metag)){
+    train.metag<-melonnpan::melonnpan.training.data
+  } else{ 
+    train.metag<-data.frame(readTable(train.metag))
+  }
+  
+  train.metag<-melonnpan::melonnpan.training.data
   
   # Subset to common IDs
   commonID<-intersect(colnames(train.metag), colnames(test.metag))
@@ -112,8 +118,11 @@ melonnpan.predict<-function(
   new.metag<-test.metag[, retainIDs]
   
   # Load weight matrix
-  if (is.null(weight.matrix)) weight.matrix<-melonnpan::melonnpan.trained.model
-  train.weight<-as.data.frame(t(weight.matrix))
+  if (is.null(weight.matrix)){
+    weight.matrix<-melonnpan::melonnpan.trained.model
+  } else{ 
+    train.weight<-as.data.frame(t(readTable(weight.matrix)))
+  }
 
   # Subset by overlapping sequence features
   # i.e. common in both weight matrix and input data (sequence features)
