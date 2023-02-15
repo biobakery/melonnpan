@@ -1,0 +1,6 @@
+Changes on 11-19-2022 (0.99.0)
+* AST transformation for metab is now optional
+* RIN transformation for metag is now optional
+* Both metab and metag can be non-proportional unlike the original 2019 paper
+* No back transformation is applied on the predictions if AST is turned off
+* Negative values (e.g., log-transformed metabolites) are also supported by the above modifications 

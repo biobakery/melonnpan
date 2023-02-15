@@ -1,0 +1,11 @@
+.Rhistory
+*.DS_Store
+*.tex
+*.Rapp.history
+*synctex.gz
+*.toc
+*.log
+*.httr-oauth
+.Rproj.user
+.RData
+update_README.sh
